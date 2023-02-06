@@ -40,5 +40,5 @@ Using Python to explore data related to bike share systems for three major citie
 
 
 ### Credits
-
+It has been made use of this StackOverflow answer https://stackoverflow.com/a/53037757
 
