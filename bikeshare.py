@@ -189,10 +189,14 @@ def main():
         user_stats(df)
         disply_raw_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        restart = input("\nWould you like to restart? (type 'Y' for 'yes' and N for 'No')\n").upper()
+        
+        if restart == 'Y':
+            print("Lets start over!")
+            
+        elif restart == 'N':
             break
-
+        
 
 if __name__ == "__main__":
 	main()
