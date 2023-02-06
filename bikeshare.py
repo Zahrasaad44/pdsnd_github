@@ -162,13 +162,13 @@ def user_stats(df):
 
     
 def disply_raw_data(df):
-    rows = 5
+    rows = 0
     
     while True:
         more_data = input("Would you like to see all the details of the trips? (type 'Y' for 'yes' and N for 'No')").upper()
         
         if more_data == 'Y':
-            print(df.head(rows))
+            print(df.iloc[rows : rows + 5])
             rows += 5
             
         elif more_data == 'N':
