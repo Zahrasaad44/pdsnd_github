@@ -111,7 +111,7 @@ def station_stats(df):
 
     print('Most commonly used end station: \n', df['End Station'].mode()[0])
 
-   # From StakOverflow https://stackoverflow.com/a/53037757
+   # From StackOverflow https://stackoverflow.com/a/53037757
     print('most frequent combination of start station and end station trip: \n', df.groupby(['Start Station', 'End Station']).size().idxmax())
 
 
@@ -163,6 +163,7 @@ def user_stats(df):
 
     
 def disply_raw_data(df):
+    """Asks user whether they want to see raw data without any statistics"""
     rows = 5
     
     while True:
