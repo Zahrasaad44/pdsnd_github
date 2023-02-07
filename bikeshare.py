@@ -1,6 +1,5 @@
 import time
 import pandas as pd
-import numpy as np
 
 CITY_DATA = { 'chicago': 'chicago.csv',
               'new york city': 'new_york_city.csv',
@@ -164,13 +163,13 @@ def user_stats(df):
     
 def disply_raw_data(df):
     """Asks user whether they want to see raw data without any statistics"""
-    rows = 5
+    rows = 0
     
     while True:
         more_data = input("Would you like to see all the details of the trips? (type 'Y' for 'yes' and N for 'No')").upper()
         
         if more_data == 'Y':
-            print(df.head(rows))
+            print(df.iloc[rows : rows + 5])
             rows += 5
             
         elif more_data == 'N':
@@ -191,10 +190,14 @@ def main():
         user_stats(df)
         disply_raw_data(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
-        if restart.lower() != 'yes':
+        restart = input("\nWould you like to restart? (type 'Y' for 'yes' and N for 'No')\n").upper()
+        
+        if restart == 'Y':
+            print("Lets start over!")
+            
+        elif restart == 'N':
             break
-
+        
 
 if __name__ == "__main__":
 	main()
